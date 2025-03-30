@@ -50,15 +50,9 @@ def findPort():
 		EBBport = None
 		for port in comPortsList:
 			if port[0] == "/dev/cu.usbserial-1140":
-				#inkex.errormsg(gettext.gettext("Port: {}".format(port.device if hasattr(port, 'device') else str(port))))
-				#inkex.errormsg("Found")
 				EBBport = port[0] 	#Success; EBB found by name match.
 				break	#stop searching-- we are done.
-		#if EBBport is None:
-		#	for port in comPortsList:
-		#		if port[2].startswith("usbserial-1140"):
-		#			EBBport = port[0] #Success; EBB found by VID/PID match.
-		#			break	#stop searching-- we are done.				
+
 		return EBBport
 
 def testPort( comPort ):
